@@ -335,7 +335,7 @@ start_instance() {
 }
 
 config_cb() {
-    if [ "1" = "1" ]; then
+    if [ "1" == "1" ]; then
 	[ $# -eq 0 ] && return
 
 	local type="$1"
@@ -388,13 +388,12 @@ config_cb() {
     fi
 }
 
-service_triggers()
-{
+service_triggers() {
 	procd_add_reload_trigger "$NAME"
 }
 
 start_service() {
-    if [ "1" = "1" ]; then
+    if [ "1" == "1" ]; then
 	local init_cfg=" "
 	local conf_file="$CONFIG_FOLDER/$NAME.ini"
 
